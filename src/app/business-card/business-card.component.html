@@ -1,32 +1,21 @@
-<div class="all"> 
-    <h2>Mrs</h2>
-    <h3>{{name}} {{surname}}</h3>
-    <!-- <p class="birthdate"> Date of birth: {{dateOfBirth}}</p> -->
-     <app-show-date [dateToShow]="dateOfBirth" title="Date of birth:" format="yyyy-mm-dd"></app-show-date>
-    <!-- <div>Interests (from for):
-        <ul>
-            <!-- <li>{{interests[0]}}</li>
-            <li>{{interests[1]}}</li>
-            <li>{{interests[2]}}</li> -->
+<div class="all">
+  <h2>Mrs</h2>
+  <h3>{{name}} {{surname}}</h3>
+  <!-- <p class="birthdate"> Date of birth: {{dateOfBirth}}</p> -->
+  <app-show-date [dateToShow]="dateOfBirth" title="Date of birth:" format="yyyy-mm-dd"></app-show-date>
 
-            <!-- @for (interest of interests; track $index) {
-                <li [class.selected]="$index===selected" (click)="selectInterest($index)">{{interest}} </li>
-            } @empty {
-                <li>No items...</li>
-            }
-        </ul>
-    </div> -->
-    <app-manage-interests [interestList]="interests" [selected]="selected" (selectInterestInParent)="selectInterest($event)"></app-manage-interests>
-    @if (selected>-1) {
-        
-        <h2>Edit:</h2>
-        <div>
-            <label>interest:
-                <input [(ngModel)]="interests[selected]" />
-                <button (click)="selected=-1">Save</button>
-            </label>
-        </div>
-}
+  <app-manage-interests [interestList]="interests" [selected]="selected" (selectInterestInParent)="selectInterest($event)"></app-manage-interests>
+
+  <!-- Edit section for selected interest -->
+  <div *ngIf="selected > -1">
+    <h2>Edit:</h2>
+    <label>
+      interest:
+      <input [(ngModel)]="interests[selected]" />
+      <button (click)="selected = -1">Save</button>
+    </label>
+  </div>
+
+  <!-- Cancel button calls reset method -->
+  <button (click)="reset()">Cancel</button>
 </div>
-
-
