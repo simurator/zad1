@@ -8,8 +8,8 @@ export class DataService {
     return {
       name: 'Joanna',
       surname: 'Krupa',
-      dateOfBirth: new Date('2000-03-18'),
-      interests: ['tennis', 'programming', 'photography']
+      dateOfBirth: new Date('2003-03-18'),
+      interests: ['football', 'reading books', 'playing games']
     };
   }
 }

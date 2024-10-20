@@ -1,7 +1,7 @@
 /* HeroesComponent's private CSS styles */
 .all{
     border: solid blue 1px;
-    background-color: lightblue;
+    background-color: yellowgreen;
     border-radius:16px;
     padding: 50px;
     width: 30%;
@@ -27,4 +27,3 @@ h2 {
     background-color: lightgoldenrodyellow;
   }
 
-  
